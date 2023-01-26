@@ -23,7 +23,7 @@ document.getElementById('mostrar').addEventListener('click', function() {
 					}
 				});
 				console.log("total en grupo 1: "+sum);				
-				let json = '{"letra":"D", "value":'+sum+'}';
+				let json = '{"letra":"D", "description":" -> Dominante : Franco, decisivo, organizado, extrovertido, orientado a las tareas","value":'+sum+'}';
 				subtotales.push(JSON.parse(json));
 				
 				let sum2 = 0;
@@ -79,7 +79,7 @@ document.getElementById('mostrar').addEventListener('click', function() {
 			let r1 = subtotales[3];
 			let r2 = subtotales[2];
 			console.log("Tu personalidad es: "+r1.letra+ " y " +r2.letra);
-			document.querySelector('#resultado').innerHTML = "En hora buena, tu personalidad es: "+r1.letra+ " y " +r2.letra;
+			document.querySelector('#resultado').innerHTML = "En hora buena, tu personalidad es: "+r1.letra + r1.description+ " y " +r2.letra;
 			
 });
 
