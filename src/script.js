@@ -16,10 +16,12 @@ document.getElementById('mostrar').addEventListener('click', function() {
 				
 				// recorrer los radio del div id grupo1
 				let sum = 0;
+				let validar = 0; // valida si los todas las preguntas son respondidas
 				document.querySelectorAll('div[id="grupo1"] input[type="radio"]').forEach(element => {
 					
 					if(element.checked == true) {
 						sum = sum + Number(element.value);
+						validar = validar + 1;
 					}
 				});
 				console.log("total en grupo 1: "+sum);				
@@ -31,6 +33,7 @@ document.getElementById('mostrar').addEventListener('click', function() {
 					
 					if(element.checked == true) {
 						sum2 = sum2 + Number(element.value);
+						validar = validar + 1;
 					}
 				});
 				console.log("total en grupo 2: "+sum2);				
@@ -43,6 +46,7 @@ document.getElementById('mostrar').addEventListener('click', function() {
 					
 					if(element.checked == true) {
 						sum3 = sum3 + Number(element.value);
+						validar = validar + 1;
 					}
 				});
 				console.log("total en grupo 3: "+sum3);				
@@ -55,6 +59,7 @@ document.getElementById('mostrar').addEventListener('click', function() {
 					
 					if(element.checked == true) {
 						sum4 = sum4 + Number(element.value);
+						validar = validar + 1;
 					}
 				});
 				console.log("total en grupo 4: "+sum4);				
@@ -79,7 +84,11 @@ document.getElementById('mostrar').addEventListener('click', function() {
 			let r1 = subtotales[3];
 			let r2 = subtotales[2];
 			console.log("Tu personalidad es: "+r1.letra+ " y " +r2.letra);
+			if(validar == 20){
 			document.querySelector('#resultado').innerHTML = "En hora buena, tu personalidad es: "+r1.letra + r1.description+ " y " +r2.letra + r2.description;
+			}else{
+				alert("Recuerde que debe responder todos los items");
+			}
 			
 });
 
